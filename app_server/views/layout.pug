@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .navbar 
+      .navbar-logo
+        img(src="/images/logo.png", alt="Logo", width="50", height="30") 
+      
+      a(href="/homepage/") HOME
+      a(href="/labtest/") LAB TESTS
+      a(href="/stores/") STORES 
+      a(href="/signin/") SIGN IN
+  
+    block content
+    
+    footer
+      p &copy; #{new Date().getFullYear()} Gym Community
+      ul.social-links
+        li
+          a(href="#")
+            i.fab.fa-facebook
+        li
+          a(href="#")
+            i.fab.fa-twitter
+        li
+          a(href="#")
+            i.fab.fa-instagram
+
+

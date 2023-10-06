@@ -1,0 +1,62 @@
+extends layout 
+block content 
+    style.
+        .card-container {
+         padding-top: 10px;
+         display: flex ;
+         justify-content: space-around;
+         flex-wrap: wrap;
+        }
+        .card {
+         width: 300px;
+         display: flex;
+         /*background-color: #fff;*/
+         border-radius: 10px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         /*margin: 20px;
+         padding: 20px;*/
+         transition: transform 0.3s ease;
+         background-image: linear-gradient(#006663  ,#111111);
+       }
+       
+       .card:hover {
+         transform: translateY(-10px);
+       }
+       
+       .card-image {
+         width: 100px;
+         height: 100px;
+         /*border-radius: 50%;*/
+         overflow: hidden;
+         margin: 0 auto 10px;
+       }
+       
+       .card-image img {        
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+       }
+       
+       .card-title {
+         text-align: center;
+         color: #66FCF1;
+         font-size: 24px;
+         margin: 0;
+       }
+       
+       .card-description {
+        color: #C5C6C7;
+        padding-top: 20px;
+         font-size: 16px;
+       }
+
+       
+    body
+        each test in tests  
+          .card-container
+            .card
+              .card-image
+                img(src= test.img, alt="Image 1")
+              h2.card-title= test.name
+              .pleft-align 
+                p.card-description= test.price

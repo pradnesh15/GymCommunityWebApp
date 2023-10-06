@@ -1,0 +1,29 @@
+extends layout
+
+
+block content
+  h1= title
+  //p Welcome to my webpage
+  
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline} 
+  p
+   h1
+    a(href="/userLocation") Check Your Current Location
+  .row 
+    .col-12.col-md-8 
+      
+      each location in locations
+        .card 
+          .card-block   
+            h4
+              a(href="/location")= location.name
+              small &nbsp;
+                location.rating
+              span.badge.badge-pill.badge-default.float-right= location.dist
+            p.address= location.address
+          
+    .col-12.col-md-4 
+      p1.lead= sidebar

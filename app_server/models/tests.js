@@ -10,7 +10,10 @@ const testsInlab = new mongoose.Schema({
             type: String,
             required: true
         },
-        price: String
+        price: {
+            type: Number,
+            required: true
+        }
     }
 });
 

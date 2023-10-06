@@ -3,7 +3,8 @@ block content
     style.
         .card-container {
          padding-top: 10px;
-         display: flex ;
+         display: inline-block;
+         margin-left: 45px;
          justify-content: space-around;
          flex-wrap: wrap;
         }
@@ -47,16 +48,35 @@ block content
        .card-description {
         color: #C5C6C7;
         padding-top: 20px;
-         font-size: 16px;
+        font-size: 16px;
        }
 
-       
-    body
-        each test in tests  
-          .card-container
-            .card
-              .card-image
-                img(src= test.img, alt="Image 1")
-              h2.card-title= test.name
-              .pleft-align 
-                p.card-description= test.price
+       h3{
+         text-align: center;
+       }
+
+
+    script.
+      // JavaScript code here
+      let totalPrice = 0
+      function addPrice(price, itemName) {
+          totalPrice += price;
+          document.getElementById("totalPrice").innerText = "Total Price: ₹ " + totalPrice;
+          alert(itemName + " is added to the cart");
+        }
+      function resetPrice() {
+          totalPrice = 0;
+          document.getElementById("totalPrice").innerText = "Total Price: ₹ " + totalPrice;
+        }
+    
+    each test in tests  
+      .card-container(onclick=`addPrice(${test.price}, '${test.name}')`)
+        .card
+          .card-image
+            img(src= test.img, alt="Image 1")
+          h2.card-title= test.name
+          .pleft-align 
+            p.card-description= "₹ "+ test.price
+    h3
+      p#totalPrice Total Price: ₹ #{totalPrice}
+      button.btn.btn-primary(style="margin-top: 10px;", onclick="resetPrice()") Reset Total

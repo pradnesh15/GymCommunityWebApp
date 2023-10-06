@@ -76,59 +76,56 @@ const locations = (req, res) => {
         ]
     });
 };
-const locationInfo = (req, res) => {
-    res.render('location-info',
-        {
-            title: 'Starcups',
-            pageHeader: {
-                title: 'Loc8r',
-            },
-            sidebar: {
-                context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
-                callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
-            },
-            locationInfo: {
-                name: 'Starcups',
-                address: '125 High Street, Reading, RG6 1PS',
-                rating: 3,
-                facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-                coords: { lat: 51.455041, lng: -0.9690884 },
-                openingTimes: [
-                    {
-                        days: 'Monday - Friday',
-                        opening: '7:00am',
-                        closing: '7:00pm',
-                        closed: false
-                    },
-                    {
-                        days: 'Saturday',
-                        opening: '8:00am',
-                        closing: '5:00pm',
-                        closed: false
-                    },
-                    {
-                        days: 'Sunday',
-                        closed: true
-                    }
-                ],
-                reviews: [
-                    {
-                        author: 'Simon Holmes',
-                        rating: 5,
-                        timestamp: '16 July 2013',
-                        reviewText: 'What a great place. I can\'t say enough good things about it.'
-                    },
-                    {
-                        author: 'Charlie Chaplin',
-                        rating: 3,
-                        timestamp: '16 June 2013',
-                        reviewText: 'It was okay. Coffee wasn\'t great, but the wifi was fast.'
-                    }
-                ]
-            }
-        }
-    );
-};
+
+const locationInfo = function(req, res){
+    res.render('location-info', {
+      pageHeader: {
+        title: 'Pro Fitness Club'
+      },
+      sidebar: {
+        context: ' we are more than just a fitness center - we are a community dedicated to helping you achieve your health and wellness goals. Here is what sets us apart ',
+        types: ['1. Expert Guidance',  '2. State-of-the-Art Facilities',  '3. Nutrition Support', '4. Clean and Safe Environment']
+        //callToAction: 'Expert Guidance '
+       //callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
+      },
+      location_info: {
+        name: 'Pro Fitness Club',
+        address: 'Hitech City, Hyderabad',
+        rating: 5,
+        facilities: ['Standard equipments', 'Healthy-diet', 'Personal guidance'],
+        coords: {
+          lat: 51.455041,
+          lng: -0.9690884
+        },
+        openingTimes: [{
+          days: 'Monday - Friday',
+          opening: '7:00am',
+          closing: '7:00pm',
+          closed: false
+        }, {
+          days: 'Saturday',
+          opening: '8:00am',
+          closing: '5:00pm',
+          closed: false
+        }, {
+          days: 'Sunday',
+          closed: true
+        }],
+        reviews: [{
+          author: 'Pradnesh D',
+          rating: 5,
+          timestamp: '16 July 2023',
+          reviewText: 'What a great community !.'
+        }, {
+          author: 'Professor',
+          rating: 3,
+          timestamp: '5 April 2023',
+          reviewText: 'Overall it was okay. But I wasn\'t comfortable with the guidance tips.'
+        }]
+      },
+      
+    });
+  };
 module.exports = {
     // homelist,
     locations,
